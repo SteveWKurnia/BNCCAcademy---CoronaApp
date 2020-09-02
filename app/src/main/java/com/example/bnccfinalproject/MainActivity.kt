@@ -17,12 +17,19 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         setupBottomSheet()
+        setupHotlineButton()
     }
 
     private fun setupBottomSheet() {
         BottomSheetBehavior.from(bottom_sheet).apply {
             isHideable = false
             peekHeight = Resources.getSystem().displayMetrics.heightPixels / 2 + 100
+        }
+    }
+
+    private fun setupHotlineButton() {
+        rl_hotline?.setOnClickListener {
+            HotlineDialogFragment.show(supportFragmentManager)
         }
     }
 }
