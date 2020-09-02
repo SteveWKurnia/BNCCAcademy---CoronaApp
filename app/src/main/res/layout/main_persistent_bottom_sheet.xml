@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/shape_rounded_top_left_right_25dp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:paddingTop="25dp"
+    android:paddingStart="25dp"
+    android:paddingEnd="25dp"
+    android:id="@+id/bottom_sheet">
+
+    <View
+        android:id="@+id/grapple"
+        android:layout_width="35dp"
+        android:layout_height="3dp"
+        android:background="@drawable/grapple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"/>
+
+    <LinearLayout
+        android:id="@+id/ll_positive"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grapple"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:background="@drawable/blue_rounded_10dp"
+        android:gravity="center"
+        android:elevation="5dp">
+
+        <TextView
+            android:id="@+id/tv_positive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/h4"
+            android:textColor="@color/white"
+            android:text="10000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Positive"
+            style="@style/b1"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_recovered"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toEndOf="@id/ll_positive"
+        app:layout_constraintTop_toBottomOf="@id/grapple"
+        app:layout_constraintEnd_toStartOf="@id/ll_deaths"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/green_rounded_10dp"
+        android:gravity="center"
+        android:elevation="5dp">
+
+        <TextView
+            android:id="@+id/tv_recovered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/h4"
+            android:textColor="@color/white"
+            android:text="10000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Positive"
+            style="@style/b1"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_deaths"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grapple"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/red_rounded_10dp"
+        android:gravity="center"
+        android:elevation="5dp">
+
+        <TextView
+            android:id="@+id/tv_deaths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/h4"
+            android:textColor="@color/white"
+            android:text="10000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Positive"
+            style="@style/b1"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_know_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get to know more"
+        style="@style/h4"
+        android:textColor="@color/indigo2"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_positive"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_look_up"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_know_more"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/violet_rounded_10dp"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/iv_look_up"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/ic_location_pin"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv_look_up_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Look Up"
+            style="@style/h4"
+            android:textColor="@color/indigo2"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/iv_look_up"/>
+
+        <TextView
+            android:id="@+id/tv_look_up_desc"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:text="See details by province all over Indonesia"
+            style="@style/b1"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_below="@id/tv_look_up_title"
+            android:layout_toEndOf="@id/iv_look_up"/>
+
+        <ImageView
+            android:id="@+id/iv_look_up_chevron"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_chevron"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_hotline"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/rl_look_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/violet_rounded_10dp"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/iv_hotline"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/ic_siren"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv_hotline_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hotline"
+            style="@style/h4"
+            android:textColor="@color/indigo2"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@id/iv_hotline"/>
+
+        <TextView
+            android:id="@+id/tv_hotline_desc"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:text="Check emergency number to contact"
+            style="@style/b1"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_below="@id/tv_hotline_title"
+            android:layout_toEndOf="@id/iv_hotline"/>
+
+        <ImageView
+            android:id="@+id/iv_hotline_chevron"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_chevron"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
