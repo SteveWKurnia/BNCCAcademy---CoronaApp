@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="25dp"
-                    android:text="Hotline"
+                    android:text="@string/hotline_title"
                     android:textColor="@color/indigo2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/iv_close" />
@@ -42,10 +42,11 @@
                 <TextView
                     android:id="@+id/tv_hotline_desc"
                     style="@style/b1"
-                    android:layout_width="250dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:text="Layanan darurat via telepon yang disediakan oleh Kemkes dan juga Pemprov DKI Jakarta"
+                    android:layout_marginEnd="30dp"
+                    android:text="@string/hotline_desc"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_hotline_title" />
 
