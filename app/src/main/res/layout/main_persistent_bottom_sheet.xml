@@ -207,7 +207,7 @@
         style="@style/h4"
         android:textColor="@color/indigo2"
         android:layout_marginTop="25dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rl_positive"/>
 
@@ -216,12 +216,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintTop_toBottomOf="@id/tv_know_more"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/violet_rounded_10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/btn_corona_access"
         android:padding="20dp">
 
         <ImageView
@@ -244,19 +245,21 @@
 
         <TextView
             android:id="@+id/tv_look_up_desc"
-            android:layout_width="175dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/look_up_desc"
             style="@style/b2"
-            android:layout_marginStart="20dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_below="@id/tv_look_up_title"
-            android:layout_toEndOf="@id/iv_look_up"/>
+            android:layout_toEndOf="@id/iv_look_up"
+            android:layout_toStartOf="@id/iv_look_up_chevron"/>
 
         <ImageView
             android:id="@+id/iv_look_up_chevron"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/ic_chevron"
+            app:tint="@color/indigo2"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"/>
 
@@ -267,12 +270,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginHorizontal="20dp"
         app:layout_constraintTop_toBottomOf="@id/rl_look_up"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/violet_rounded_10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/btn_corona_access"
         android:padding="20dp">
 
         <ImageView
@@ -295,19 +299,21 @@
 
         <TextView
             android:id="@+id/tv_hotline_desc"
-            android:layout_width="175dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/hotline_home_desc"
             style="@style/b2"
-            android:layout_marginStart="20dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_below="@id/tv_hotline_title"
-            android:layout_toEndOf="@id/iv_hotline"/>
+            android:layout_toEndOf="@id/iv_hotline"
+            android:layout_toStartOf="@id/iv_hotline_chevron"/>
 
         <ImageView
             android:id="@+id/iv_hotline_chevron"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/ic_chevron"
+            app:tint="@color/indigo2"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"/>
 

@@ -24,23 +24,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/iv_info"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/btn_haptic_image"
             android:contentDescription="Information"
             android:src="@drawable/ic_info"
+            android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="@id/tv_header"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/tv_header" />
 
         <ImageView
             android:id="@+id/iv_corona"
-            android:layout_width="175dp"
-            android:layout_height="175dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="144dp"
+            android:layout_height="144dp"
             android:src="@drawable/ic_virus"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_header" />
 
