@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BNCCFinalProject</string>
+    <string name="hotline_title">Hotline</string>
+    <string name="hotline_desc">Layanan darurat via telepon yang disediakan oleh Kemkes dan juga Pemprov DKI Jakarta</string>
 </resources>

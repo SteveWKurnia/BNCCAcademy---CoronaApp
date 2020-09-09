@@ -17,12 +17,27 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         setupBottomSheet()
+        setupHotlineButton()
     }
 
     private fun setupBottomSheet() {
         BottomSheetBehavior.from(bottom_sheet).apply {
             isHideable = false
-            peekHeight = Resources.getSystem().displayMetrics.heightPixels / 2 + 100
+            peekHeight = Resources.getSystem().displayMetrics.heightPixels / 3 * 2
+        }
+    }
+
+    private fun setupHotlineButton() {
+        rl_hotline?.setOnClickListener {
+            HotlineDialogFragment.show(supportFragmentManager)
+        }
+    }
+
+    override fun onBackPressed() {
+        if (BottomSheetBehavior.from(bottom_sheet).state == BottomSheetBehavior.STATE_EXPANDED) {
+            BottomSheetBehavior.from(bottom_sheet).state = BottomSheetBehavior.STATE_COLLAPSED
+        } else {
+            super.onBackPressed()
         }
     }
 }
