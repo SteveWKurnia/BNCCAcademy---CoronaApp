@@ -15,59 +15,59 @@
 
         <TextView
             android:id="@+id/tv_header"
+            style="@style/h4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Indonesia"
-            style="@style/h4"
             android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_info"
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:contentDescription="Information"
             android:src="@drawable/ic_info"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/tv_header"
-            app:layout_constraintTop_toTopOf="@id/tv_header"
-            android:contentDescription="Information"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_header" />
 
         <ImageView
             android:id="@+id/iv_corona"
             android:layout_width="175dp"
             android:layout_height="175dp"
-            android:src="@drawable/ic_virus"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_virus"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_header"/>
+            app:layout_constraintTop_toBottomOf="@id/tv_header" />
 
         <TextView
             android:id="@+id/tv_total_case"
+            style="@style/h1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="86521"
-            style="@style/h1"
-            android:textColor="@color/white"
-            android:layout_marginTop="65dp"
             android:layout_marginStart="25dp"
+            android:layout_marginTop="65dp"
+            android:text="86521"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_info"
-            app:layout_constraintStart_toEndOf="@id/iv_corona"/>
+            app:layout_constraintStart_toEndOf="@id/iv_corona"
+            app:layout_constraintTop_toBottomOf="@id/iv_info" />
 
         <TextView
             android:id="@+id/tv_total_case_desc"
+            style="@style/b1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Total Cases"
-            style="@style/b1"
-            android:textColor="@color/white"
             android:layout_marginStart="25dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_total_case"
+            android:text="Total Cases"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/iv_corona"/>
+            app:layout_constraintStart_toEndOf="@id/iv_corona"
+            app:layout_constraintTop_toBottomOf="@id/tv_total_case" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="16dp"
+    android:elevation="16dp"
+    app:cardCornerRadius="16dp"
+    android:layout_margin="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="16dp"
+        android:layout_gravity="center">
+
+
+        <!--        tools cuma buat dummy-->
+
+        <!--       NAMA PROVINSI        -->
+        <TextView
+            android:id="@+id/tvLookUpProvinceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/indigo2"
+            android:textSize="24sp"
+            android:fontFamily="@font/rubik"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="DKI Jakarta"
+            style="@style/h4">
+
+        </TextView>
+
+        <!--        CONFIRMED CASE       -->
+
+        <ImageView
+            android:id="@+id/ivLookUpConfirmedCase"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/blue_circle"
+            app:layout_constraintBottom_toBottomOf="@id/tvLookUpProvinceName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tvLookUpConfirmedCase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ivLookUpConfirmedCase"
+            app:layout_constraintEnd_toEndOf="@+id/ivLookUpConfirmedCase"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ivLookUpConfirmedCase"
+            app:layout_constraintTop_toTopOf="@+id/ivLookUpConfirmedCase"
+            tools:text="16538">
+
+        </TextView>
+
+        <!--        RECOVERED CASE      -->
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/green_circle"
+            app:layout_constraintBottom_toBottomOf="@id/tvLookUpProvinceName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tvLookUpRecoveredCase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tvLookUpProvinceName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            android:textSize="16sp"
+            tools:text= "10444"
+            android:textColor="@color/white"
+            android:fontFamily="@font/rubik"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <!--       DEATH CASE     -->
+        <ImageView
+            android:id="@+id/ivLookUpDeathCase"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/red_circle"
+            app:layout_constraintBottom_toBottomOf="@id/tvLookUpProvinceName"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tvLookUpDeathCase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tvLookUpProvinceName"
+            app:layout_constraintEnd_toEndOf="@+id/ivLookUpDeathCase"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ivLookUpDeathCase"
+            app:layout_constraintTop_toBottomOf="parent"
+            tools:text="736">
+
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
