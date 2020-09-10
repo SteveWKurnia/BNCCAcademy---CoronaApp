@@ -54,7 +54,7 @@ class LookUpActivity : AppCompatActivity() {
         LookUpData(provinceName = "Sulawesi Selatan", numberOfPositiveCases = 16538, numberOfRecoveredCases = 10444, numberOfDeathCases = 736),
         LookUpData(provinceName = "Maluku Utara", numberOfPositiveCases = 16538, numberOfRecoveredCases = 10444, numberOfDeathCases = 736),
         LookUpData(provinceName = "Maluku", numberOfPositiveCases = 16538, numberOfRecoveredCases = 10444, numberOfDeathCases = 736),
-        LookUpData(provinceName = "Irian Jaya Barat", numberOfPositiveCases = 16538, numberOfRecoveredCases = 10444, numberOfDeathCases = 736),
+        LookUpData(provinceName = "Papua Barat", numberOfPositiveCases = 16538, numberOfRecoveredCases = 10444, numberOfDeathCases = 736),
         LookUpData(provinceName = "Papua", numberOfPositiveCases = 16538, numberOfRecoveredCases = 10444, numberOfDeathCases = 736)
     )
 
