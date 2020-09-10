@@ -48,7 +48,9 @@ class MainActivity : AppCompatActivity() {
     private fun setupBottomSheet() {
         BottomSheetBehavior.from(bottom_sheet).apply {
             isHideable = false
-            peekHeight = Resources.getSystem().displayMetrics.heightPixels / 3 * 2
+            val scale = resources.displayMetrics.density
+            val raisePixelDP = (250 * scale).toInt()
+            peekHeight = Resources.getSystem().displayMetrics.heightPixels - raisePixelDP
         }
     }
 
