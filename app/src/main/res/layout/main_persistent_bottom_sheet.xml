@@ -222,7 +222,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:clickable="true"
         android:focusable="true"
-        android:background="@drawable/btn_corona_access"
+        android:background="@drawable/btn_menu_access"
         android:padding="20dp">
 
         <ImageView
@@ -276,7 +276,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:clickable="true"
         android:focusable="true"
-        android:background="@drawable/btn_corona_access"
+        android:background="@drawable/btn_menu_access"
         android:padding="20dp">
 
         <ImageView
