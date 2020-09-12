@@ -3,6 +3,7 @@ package com.example.bnccfinalproject
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.bnccfinalproject.hotline.HotlineDialogFragment
 import android.util.Log
 import android.content.Intent
 import android.view.View
