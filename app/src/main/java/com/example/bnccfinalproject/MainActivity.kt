@@ -6,15 +6,28 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bnccfinalproject.hotline.HotlineDialogFragment
 import com.example.bnccfinalproject.lookup.LookUpActivity
+import android.view.View
+import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_persistent_bottom_sheet.*
+import okhttp3.*
+import org.json.JSONArray
+import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
+
+    private val okHttpClient = OkHttpClient()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val request = Request.Builder()
+            .url("https://api.kawalcorona.com/indonesia/")
+            .build()
+
+        okHttpClient.newCall(request).enqueue(getCallback())
     }
 
     private fun openLookUpActivity(){
@@ -63,4 +76,59 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
+    private fun getCallback(): Callback
+    {
+        return object : Callback
+        {
+            override fun onFailure(call: Call, e: IOException) {
+                this@MainActivity.runOnUiThread {
+                    Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                try {
+                    val jsonString = response.body?.string()
+                    val jsonArray = JSONArray(jsonString)
+                    val homeListFromNetwork = mutableListOf<HomeData>()
+
+                    for (i in 0 until jsonArray.length())
+                    {
+                        val positive = jsonArray.getJSONObject(i).getString("positif")
+                        val posInt = positive.replace(",", "").toInt()
+
+                        val recovered = jsonArray.getJSONObject(i).getString("sembuh")
+                        val recInt = recovered.replace(",", "").toInt()
+
+                        val death = jsonArray.getJSONObject(i).getString("meninggal")
+                        val deathInt = death.replace(",", "").toInt()
+
+                        homeListFromNetwork.add(
+                            HomeData(
+                                positiveCases = posInt,
+                                recoveredCases = recInt,
+                                deathCases = deathInt,
+                                totalCases = posInt + recInt + deathInt
+                            )
+                        )
+
+                        this@MainActivity.runOnUiThread {
+                            tv_positive?.text = homeListFromNetwork[i].positiveCases.toString()
+                            tv_recovered?.text = homeListFromNetwork[i].recoveredCases.toString()
+                            tv_deaths?.text = homeListFromNetwork[i].deathCases.toString()
+                            tv_total_case?.text = homeListFromNetwork[i].totalCases.toString()
+                        }
+                    }
+                } catch (e: Exception) {
+                    this@MainActivity.runOnUiThread {
+                        Toast.makeText(this@MainActivity, e.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+            }
+
+        }
+    }
+
 }

@@ -46,12 +46,12 @@
 
         <TextView
             android:id="@+id/tv_total_case"
-            style="@style/h1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            tools:text="86521"
+            style="@style/h1"
             android:layout_marginStart="25dp"
             android:layout_marginTop="65dp"
-            android:text="86521"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_corona"
