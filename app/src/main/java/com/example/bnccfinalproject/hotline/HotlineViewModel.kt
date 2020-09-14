@@ -29,8 +29,8 @@ class HotlineViewModel: ViewModel() {
                     call: Call<List<Hotline>>,
                     response: Response<List<Hotline>>
                 ) {
-                    if (response.isSuccessful) Log.e("ERROR_RETRO", response.message())
-                    mutableHotlineDatas.postValue(response.body())
+                    if (!response.isSuccessful) Log.e("ERROR_RETRO", response.message())
+                    else mutableHotlineDatas.postValue(response.body())
                 }
             })
 
