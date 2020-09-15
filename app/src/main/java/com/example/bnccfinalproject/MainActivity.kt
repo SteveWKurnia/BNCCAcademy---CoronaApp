@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun openLookUpActivity(){
         val intent = Intent(this,LookUpActivity::class.java).apply {
-            putExtra("Extras","Hello")
         }
         startActivity(intent)
     }

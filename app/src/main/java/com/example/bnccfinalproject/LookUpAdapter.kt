@@ -26,39 +26,30 @@ class LookUpAdapter():  RecyclerView.Adapter<LookUpViewHolder>(),Filterable{
 
     override fun getFilter(): Filter = filter
 
-//    bikin object baru yg namanya filter
     private val filter = object: Filter(){
 
-    // performFiltering -> bakal kefire pertama
         override fun performFiltering(p0: CharSequence?): FilterResults {
-            val filter = mutableListOf<LookUpData>() // buat filtering
-            // check kalo p0 ada isi atau nggak
+            val filter = mutableListOf<LookUpData>()
 
             if(p0.isNullOrBlank()){
-                // tidak ada filtering yg dilakukan
                 filter.addAll(lookUpListFull)
             }
             else{
-                // filtering
-                val filterPattern = p0.toString().toLowerCase(Locale.ROOT).trim() //locale.root ngecek ke hp bahasa yg dipake
+                val filterPattern = p0.toString().toLowerCase(Locale.ROOT).trim()
                 for(i in lookUpListFull.indices){
-                    // indices untuk ngeloop index dari lookuplist
-                    // kalo pake tembak index bisa ngehandle pake null safety kotlin,
 
                     if(lookUpListFull.get(i).provinceName.toLowerCase(Locale.ROOT).contains(filterPattern)){
                         filter.add(lookUpListFull.get(i))
                     }
-
                 }
             }
 
-            val filterResults = FilterResults() // buat nampung hasil dari filterannya
+            val filterResults = FilterResults()
             filterResults.values = filter
 
             return filterResults
         }
 
-    // lakuin action dan callback si publishResults
         override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
 
             lookUpList.apply {
@@ -70,7 +61,6 @@ class LookUpAdapter():  RecyclerView.Adapter<LookUpViewHolder>(),Filterable{
     }
 
     fun setData(LookUpData:List<LookUpData>){
-        // set LookUpList
         lookUpList.apply {
             clear()
             addAll(LookUpData)
@@ -81,11 +71,7 @@ class LookUpAdapter():  RecyclerView.Adapter<LookUpViewHolder>(),Filterable{
             addAll(LookUpData)
         }
 
-
-        // ngefire kalo ada perubahan
         notifyDataSetChanged()
     }
-
-
 
 }

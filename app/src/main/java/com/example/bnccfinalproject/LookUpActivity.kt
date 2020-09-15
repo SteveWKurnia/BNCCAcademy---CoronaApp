@@ -19,7 +19,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_look_up.*
 import kotlin.collections.contains as cont
 
-
 class LookUpActivity : AppCompatActivity() {
 
     private val mockLookUpList = mutableListOf<LookUpData>(
@@ -76,18 +75,12 @@ class LookUpActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 return false
             }
-
             override fun onQueryTextChange(p0: String?): Boolean {
                 lookUpAdapter.filter.filter(p0)
                 return false
             }
-
         })
     }
-
-
-
-
 
     private fun openMainActivity(){
         val intent = Intent(this,MainActivity::class.java).apply {
@@ -95,7 +88,5 @@ class LookUpActivity : AppCompatActivity() {
         }
         startActivity(intent)
     }
-
-
 }
 
