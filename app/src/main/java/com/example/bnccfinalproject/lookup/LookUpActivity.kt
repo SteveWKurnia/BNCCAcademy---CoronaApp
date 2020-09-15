@@ -1,24 +1,30 @@
-package com.example.bnccfinalproject.lookup
+package com.example.bnccfinalproject
 
 import com.example.bnccfinalproject.R
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bnccfinalproject.lookup.LookUpAdapter
+import com.example.bnccfinalproject.lookup.LookUpData
+import com.example.bnccfinalproject.lookup.LookUpModel
+import com.example.bnccfinalproject.lookup.LookUpPresenter
 import kotlinx.android.synthetic.main.activity_look_up.*
 import okhttp3.*
 import org.json.JSONArray
 import java.io.IOException
 
-class LookUpActivity : AppCompatActivity() {
+class LookUpActivity : AppCompatActivity(), PVContract.View {
 
-    private val mockLookUpList = mutableListOf<LookUpData>(
+    private val mockLookUpList = mutableListOf(
         LookUpData(provinceName = "Loading...")
     )
 
-    private val okHttpClient = OkHttpClient()
+    private val presenter = LookUpPresenter(LookUpModel(), this)
+    private val lookUpAdapter = LookUpAdapter()
 
     companion object {
         const val lookupDataApiURL = "https://api.kawalcorona.com/indonesia/provinsi/"
@@ -27,17 +33,26 @@ class LookUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_look_up)
+        setupBackButton()
+        setupAdapter()
 
+        presenter.fetchData()
+        setupSearch()
+    }
+
+    private fun setupBackButton() {
         iv_arrow.setOnClickListener {
             finish()
         }
+    }
 
-        val lookUpAdapter = LookUpAdapter()
+    private fun setupAdapter() {
         lookUpAdapter.setData(mockLookUpList)
         rvLookUp.layoutManager = LinearLayoutManager(this)
         rvLookUp.adapter = lookUpAdapter
-        fetchData(lookUpAdapter)
+    }
 
+    private fun setupSearch() {
         searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 return false
@@ -50,51 +65,18 @@ class LookUpActivity : AppCompatActivity() {
         })
     }
 
-    private fun fetchData(lookupAdapter: LookUpAdapter) {
-        val request: Request = Request.Builder().url(lookupDataApiURL).build()
-        okHttpClient.newCall(request).enqueue(getCallback(lookupAdapter))
+    override fun updateData(listData: List<*>) {
+        this@LookUpActivity.runOnUiThread {
+            lookUpAdapter.setData(listData as List<LookUpData>)
+            pbLookUp.visibility = View.GONE
+            rvLookUp.visibility = View.VISIBLE
+        }
     }
 
-    private fun getCallback(lookupAdapter: LookUpAdapter): Callback {
-        return object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                this@LookUpActivity.runOnUiThread {
-                    Toast.makeText(this@LookUpActivity, e.message, Toast.LENGTH_SHORT).show()
-                    e.printStackTrace()
-                }
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                try {
-                    val jsonString = response.body?.string()
-                    val jsonArray = JSONArray(jsonString)
-                    val lookupDataFromNetwork = mutableListOf<LookUpData>()
-
-                    for (i in 0 until jsonArray.length()) {
-                        val attribute = jsonArray.getJSONObject(i).getJSONObject("attributes")
-                        lookupDataFromNetwork.add(
-                            LookUpData(
-                                provinceID = attribute.getInt("Kode_Provi"),
-                                provinceName = attribute.getString("Provinsi"),
-                                numberOfPositiveCases = attribute.getInt("Kasus_Posi"),
-                                numberOfRecoveredCases = attribute.getInt("Kasus_Semb"),
-                                numberOfDeathCases = attribute.getInt("Kasus_Meni")
-                            )
-                        )
-                    }
-
-                    this@LookUpActivity.runOnUiThread {
-                        lookupAdapter.setData(lookupDataFromNetwork)
-                        pbLookUp.visibility = View.GONE
-                        rvLookUp.visibility = View.VISIBLE
-                    }
-                } catch (e: Exception) {
-                    this@LookUpActivity.runOnUiThread {
-                        Toast.makeText(this@LookUpActivity, e.message, Toast.LENGTH_SHORT).show()
-                        e.printStackTrace()
-                    }
-                }
-            }
+    override fun showError(e: Exception) {
+        this@LookUpActivity.runOnUiThread {
+            Toast.makeText(this@LookUpActivity, e.message, Toast.LENGTH_SHORT).show()
+            Log.e("QUERY FAILURE", Log.getStackTraceString(e), e.cause)
         }
     }
 }
