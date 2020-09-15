@@ -1,10 +1,11 @@
-package com.example.bnccfinalproject
+package com.example.bnccfinalproject.lookup
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bnccfinalproject.R
 import java.util.*
 
 class LookUpAdapter():  RecyclerView.Adapter<LookUpViewHolder>(),Filterable{
@@ -13,7 +14,12 @@ class LookUpAdapter():  RecyclerView.Adapter<LookUpViewHolder>(),Filterable{
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LookUpViewHolder {
         return LookUpViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_look_up,parent,false))
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.item_look_up,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount(): Int {
@@ -21,7 +27,7 @@ class LookUpAdapter():  RecyclerView.Adapter<LookUpViewHolder>(),Filterable{
     }
 
     override fun onBindViewHolder(holder: LookUpViewHolder, position: Int) {
-            holder.bind(lookUpList[position])
+        holder.bind(lookUpList[position])
     }
 
     override fun getFilter(): Filter = filter

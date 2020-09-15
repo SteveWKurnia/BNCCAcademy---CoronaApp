@@ -1,4 +1,4 @@
-package com.example.bnccfinalproject
+package com.example.bnccfinalproject.lookup
 
 data class LookUpData(
     val provinceName: String,
