@@ -11,17 +11,12 @@ import com.example.bnccfinalproject.lookup.*
 import kotlinx.android.synthetic.main.activity_look_up.*
 
 class LookUpActivity : AppCompatActivity(), PVContract.View {
-
     private val mockLookUpList = mutableListOf(
         LookUpData(provinceName = "Loading...")
     )
 
     private val presenter = LookUpPresenter(LookUpModel(), this)
     private val lookUpAdapter = LookUpAdapter()
-
-    companion object {
-        const val lookupDataApiURL = "https://api.kawalcorona.com/indonesia/provinsi/"
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
