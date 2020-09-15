@@ -1,7 +1,8 @@
-package com.example.bnccfinalproject
+package com.example.bnccfinalproject.lookup
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bnccfinalproject.lookup.LookUpData
 import kotlinx.android.synthetic.main.item_look_up.view.*
 
 class LookUpViewHolder(itemView:View) : RecyclerView.ViewHolder(itemView){

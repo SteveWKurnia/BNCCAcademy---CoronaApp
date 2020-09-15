@@ -1,12 +1,11 @@
 package com.example.bnccfinalproject
 
-import android.content.res.Resources
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.example.bnccfinalproject.hotline.HotlineDialogFragment
-import android.util.Log
 import android.content.Intent
-import android.view.View
+import android.content.res.Resources
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.example.bnccfinalproject.hotline.HotlineDialogFragment
+import com.example.bnccfinalproject.lookup.LookUpActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_persistent_bottom_sheet.*
@@ -16,20 +15,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.e("Activity","LookUpActivity:onCreate")
-
-        iv_look_up_chevron.setOnClickListener{
-            openLookUpActivity()
-        }
-
-        iv_info.setOnClickListener{
-
-        }
     }
 
     private fun openLookUpActivity(){
-        val intent = Intent(this,LookUpActivity::class.java).apply {
-        }
+        val intent = Intent(this,
+            LookUpActivity::class.java)
         startActivity(intent)
     }
 
@@ -37,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         setupBottomSheet()
         setupHotlineButton()
+        setupLookUpButton()
+        setupInfoDialog()
     }
 
     private fun setupBottomSheet() {
@@ -49,6 +41,18 @@ class MainActivity : AppCompatActivity() {
     private fun setupHotlineButton() {
         rl_hotline?.setOnClickListener {
             HotlineDialogFragment.show(supportFragmentManager)
+        }
+    }
+
+    private fun setupLookUpButton() {
+        rl_look_up?.setOnClickListener{
+            openLookUpActivity()
+        }
+    }
+
+    private fun setupInfoDialog() {
+        iv_info?.setOnClickListener{
+            //no implementation yet
         }
     }
 
