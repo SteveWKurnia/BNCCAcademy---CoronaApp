@@ -1,6 +1,5 @@
 package com.example.bnccfinalproject.lookup
 
-import com.example.bnccfinalproject.LookUpData
 import com.example.bnccfinalproject.PVContract
 import okhttp3.Call
 import okhttp3.Callback

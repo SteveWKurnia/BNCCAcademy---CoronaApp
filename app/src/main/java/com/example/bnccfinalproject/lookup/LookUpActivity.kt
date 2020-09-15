@@ -1,6 +1,5 @@
-package com.example.bnccfinalproject
+package com.example.bnccfinalproject.lookup
 
-import com.example.bnccfinalproject.R
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,14 +7,8 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bnccfinalproject.lookup.LookUpAdapter
-import com.example.bnccfinalproject.lookup.LookUpData
-import com.example.bnccfinalproject.lookup.LookUpModel
-import com.example.bnccfinalproject.lookup.LookUpPresenter
+import com.example.bnccfinalproject.lookup.*
 import kotlinx.android.synthetic.main.activity_look_up.*
-import okhttp3.*
-import org.json.JSONArray
-import java.io.IOException
 
 class LookUpActivity : AppCompatActivity(), PVContract.View {
 

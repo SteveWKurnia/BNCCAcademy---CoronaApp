@@ -1,7 +1,5 @@
 package com.example.bnccfinalproject.lookup
 
-import com.example.bnccfinalproject.LookUpActivity
-import com.example.bnccfinalproject.LookUpAdapter
 import okhttp3.*
 
 class LookUpModel {
