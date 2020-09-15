@@ -2,6 +2,7 @@ package com.example.bnccfinalproject.lookup
 
 import com.example.bnccfinalproject.R
 import android.os.Bundle
+import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -84,6 +85,8 @@ class LookUpActivity : AppCompatActivity() {
 
                     this@LookUpActivity.runOnUiThread {
                         lookupAdapter.setData(lookupDataFromNetwork)
+                        pbLookUp.visibility = View.GONE
+                        rvLookUp.visibility = View.VISIBLE
                     }
                 } catch (e: Exception) {
                     this@LookUpActivity.runOnUiThread {
