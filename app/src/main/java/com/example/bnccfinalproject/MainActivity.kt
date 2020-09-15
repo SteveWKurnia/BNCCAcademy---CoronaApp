@@ -3,8 +3,11 @@ package com.example.bnccfinalproject
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.content.Intent
 import android.view.View
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_persistent_bottom_sheet.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +15,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.e("Activity","LookUpActivity:onCreate")
+
+        iv_look_up_chevron.setOnClickListener{
+            openLookUpActivity()
+        }
+
+        iv_info.setOnClickListener{
+
+        }
+    }
+
+    private fun openLookUpActivity(){
+        val intent = Intent(this,LookUpActivity::class.java).apply {
+        }
+        startActivity(intent)
     }
 
     override fun onStart() {
