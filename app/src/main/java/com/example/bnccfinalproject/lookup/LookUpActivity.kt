@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.content.Intent
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bnccfinalproject.MainActivity
+import com.example.bnccfinalproject.home.MainActivity
 import com.example.bnccfinalproject.R
 import kotlinx.android.synthetic.main.activity_look_up.*
 
