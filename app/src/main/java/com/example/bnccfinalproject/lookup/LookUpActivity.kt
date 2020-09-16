@@ -26,6 +26,7 @@ class LookUpActivity : AppCompatActivity(), PVContract.View<LookUpData> {
 
         presenter.fetchData()
         setupSearch()
+        setupSwipeRefresh()
     }
 
     private fun setupBackButton() {
@@ -53,11 +54,18 @@ class LookUpActivity : AppCompatActivity(), PVContract.View<LookUpData> {
         })
     }
 
+    private fun setupSwipeRefresh() {
+        srlLookUpData.setOnRefreshListener {
+            presenter.fetchData()
+        }
+    }
+
     override fun updateData(listData: List<LookUpData>) {
         this@LookUpActivity.runOnUiThread {
             lookUpAdapter.setData(listData)
+            srlLookUpData.isRefreshing = false
             pbLookUp.visibility = View.GONE
-            rvLookUp.visibility = View.VISIBLE
+            srlLookUpData.visibility = View.VISIBLE
         }
     }
 
