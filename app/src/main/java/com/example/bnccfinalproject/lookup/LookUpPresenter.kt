@@ -1,14 +1,12 @@
 package com.example.bnccfinalproject.lookup
 
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
-import com.example.bnccfinalproject.PVContract
 import com.example.bnccfinalproject.util.RetrofitInstance
 import retrofit2.*
 import java.lang.Exception
 
-class LookUpPresenter(val view: LookupContract.View) :
-    LookupContract.Presenter {
+class LookUpPresenter(val view: LookUpContract.View) :
+    LookUpContract.Presenter {
     override fun getData() {
         RetrofitInstance.coronaInstance.create(GetLookupData::class.java).getLookupDatas().enqueue(
         object : Callback<List<LookUpNetworkAttribute>> {
