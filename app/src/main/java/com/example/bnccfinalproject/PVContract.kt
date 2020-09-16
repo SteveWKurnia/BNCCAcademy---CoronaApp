@@ -1,10 +1,10 @@
 package com.example.bnccfinalproject
 
-import okhttp3.Callback
+import retrofit2.Callback
 
 interface PVContract {
-    interface Presenter {
-        fun getData(): Callback
+    interface Presenter<E> {
+        fun getData(): Callback<List<E>>
     }
 
     interface View<E> {

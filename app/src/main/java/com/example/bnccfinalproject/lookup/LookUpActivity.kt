@@ -7,16 +7,16 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bnccfinalproject.PVContract
 import com.example.bnccfinalproject.R
 import kotlinx.android.synthetic.main.activity_look_up.*
+import java.lang.Exception
 
-class LookUpActivity : AppCompatActivity(), PVContract.View<LookUpData> {
+class LookUpActivity : AppCompatActivity(), LookupContract.View {
     private val mockLookUpList = mutableListOf(
         LookUpData(provinceName = "Loading...")
     )
 
-    private val presenter = LookUpPresenter(LookUpModel(), this)
+    private val presenter = LookUpPresenter(this)
     private val lookUpAdapter = LookUpAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +25,7 @@ class LookUpActivity : AppCompatActivity(), PVContract.View<LookUpData> {
         setupBackButton()
         setupAdapter()
 
-        presenter.fetchData()
+        presenter.getData()
         setupSearch()
         setupSwipeRefresh()
     }
@@ -57,24 +57,20 @@ class LookUpActivity : AppCompatActivity(), PVContract.View<LookUpData> {
 
     private fun setupSwipeRefresh() {
         srlLookUpData.setOnRefreshListener {
-            presenter.fetchData()
+            presenter.getData()
         }
     }
 
-    override fun updateData(listData: List<LookUpData>) {
-        this@LookUpActivity.runOnUiThread {
-            lookUpAdapter.setData(listData)
-            srlLookUpData.isRefreshing = false
-            pbLookUp.visibility = View.GONE
-            srlLookUpData.visibility = View.VISIBLE
-        }
+    override fun onGetDataSuccess(list: List<LookUpData>) {
+        lookUpAdapter.setData(list)
+        srlLookUpData.isRefreshing = false
+        pbLookUp.visibility = View.GONE
+        srlLookUpData.visibility = View.VISIBLE
     }
 
-    override fun showError(e: Exception) {
-        this@LookUpActivity.runOnUiThread {
-            Toast.makeText(this@LookUpActivity, e.message, Toast.LENGTH_SHORT).show()
-            Log.e("QUERY FAILURE", Log.getStackTraceString(e), e.cause)
-        }
+    override fun onError(e: Exception) {
+        Toast.makeText(this@LookUpActivity, e.message, Toast.LENGTH_SHORT).show()
+        Log.e("QUERY FAILURE", Log.getStackTraceString(e), e.cause)
     }
 }
 

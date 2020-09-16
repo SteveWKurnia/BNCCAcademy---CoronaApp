@@ -1,9 +1,14 @@
 package com.example.bnccfinalproject.lookup
 
+import com.google.gson.annotations.SerializedName
+
 data class LookUpData(
+    @SerializedName("Provinsi")
     val provinceName: String,
+    @SerializedName("Kasus_Posi")
     var numberOfPositiveCases: Int = 0,
+    @SerializedName("Kasus_Semb")
     var numberOfRecoveredCases: Int = 0,
-    var numberOfDeathCases: Int = 0,
-    val provinceID: Int = -1
+    @SerializedName("Kasus_Meni")
+    var numberOfDeathCases: Int = 0
 )
