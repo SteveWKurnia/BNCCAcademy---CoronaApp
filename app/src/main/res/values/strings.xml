@@ -2,4 +2,11 @@
     <string name="app_name">BNCCFinalProject</string>
     <string name="hotline_title">Hotline</string>
     <string name="hotline_desc">Layanan darurat via telepon yang disediakan oleh Kemkes dan juga Pemprov DKI Jakarta</string>
+    <string name="positive">Positive</string>
+    <string name="recovered">Recovered</string>
+    <string name="death">Death</string>
+    <string name="get_to_know_more">Get to know more</string>
+    <string name="look_up_title">Look Up</string>
+    <string name="look_up_desc">See details by province all over Indonesia</string>
+    <string name="hotline_home_desc">Check emergency number to contact</string>
 </resources>
