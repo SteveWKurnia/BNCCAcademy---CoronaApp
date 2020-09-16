@@ -19,8 +19,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:orientation="vertical"/>
 
-    <LinearLayout
-        android:id="@+id/ll_positive"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rl_positive"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,35 +32,79 @@
         android:elevation="5dp"
         android:layout_marginStart="20dp">
 
+        <ProgressBar
+            android:id="@+id/pb_positive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/white"
+            tools:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <TextView
             android:id="@+id/tv_positive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/h4"
             android:textColor="@color/white"
-            android:text="10000"/>
+            tools:text="10000"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="20dp"/>
 
         <TextView
+            android:id="@+id/tv_positive_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Positive"
+            android:text="@string/positive"
             style="@style/b1"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:layout_below="@id/tv_positive"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_positive"/>
 
-    </LinearLayout>
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_positive"
+            app:constraint_referenced_ids="tv_positive_desc,tv_positive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"/>
 
-    <LinearLayout
-        android:id="@+id/ll_recovered"
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rl_recovered"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:layout_constraintStart_toEndOf="@id/ll_positive"
+        app:layout_constraintStart_toEndOf="@id/rl_positive"
         app:layout_constraintTop_toBottomOf="@id/grapple"
-        app:layout_constraintEnd_toStartOf="@id/ll_deaths"
+        app:layout_constraintEnd_toStartOf="@id/rl_deaths"
         android:orientation="vertical"
         android:layout_marginTop="15dp"
         android:background="@drawable/green_rounded_10dp"
         android:gravity="center"
         android:elevation="5dp">
+
+        <ProgressBar
+            android:id="@+id/pb_recovered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/white"
+            tools:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/tv_recovered"
@@ -68,29 +112,58 @@
             android:layout_height="wrap_content"
             style="@style/h4"
             android:textColor="@color/white"
-            android:text="10000"/>
+            tools:text="10000"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="20dp"/>
 
         <TextView
+            android:id="@+id/tv_rec_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Positive"
+            android:text="@string/recovered"
             style="@style/b1"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tv_recovered"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_recovered"/>
 
-    </LinearLayout>
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_recovered"
+            app:constraint_referenced_ids="tv_rec_desc,tv_recovered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"/>
 
-    <LinearLayout
-        android:id="@+id/ll_deaths"
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rl_deaths"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/grapple"
-        android:orientation="vertical"
         android:layout_marginTop="15dp"
         android:background="@drawable/red_rounded_10dp"
-        android:gravity="center"
         android:elevation="5dp"
         android:layout_marginEnd="20dp">
+
+        <ProgressBar
+            android:id="@+id/pb_deaths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/white"
+            tools:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
             android:id="@+id/tv_deaths"
@@ -98,28 +171,45 @@
             android:layout_height="wrap_content"
             style="@style/h4"
             android:textColor="@color/white"
-            android:text="10000"/>
+            tools:text="10000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"/>
 
         <TextView
+            android:id="@+id/tv_deaths_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Positive"
+            android:text="@string/death"
             style="@style/b1"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_deaths"/>
 
-    </LinearLayout>
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_deaths"
+            app:constraint_referenced_ids="tv_deaths,tv_deaths_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tv_know_more"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get to know more"
+        android:text="@string/get_to_know_more"
         style="@style/h4"
         android:textColor="@color/indigo2"
         android:layout_marginTop="25dp"
         android:layout_marginStart="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_positive"/>
+        app:layout_constraintTop_toBottomOf="@id/rl_positive"/>
 
     <RelativeLayout
         android:id="@+id/rl_look_up"
@@ -145,7 +235,7 @@
             android:id="@+id/tv_look_up_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Look Up"
+            android:text="@string/look_up_title"
             style="@style/h5"
             android:textColor="@color/indigo2"
             android:layout_marginTop="5dp"
@@ -156,7 +246,7 @@
             android:id="@+id/tv_look_up_desc"
             android:layout_width="175dp"
             android:layout_height="wrap_content"
-            android:text="See details by province all over Indonesia"
+            android:text="@string/look_up_desc"
             style="@style/b2"
             android:layout_marginStart="20dp"
             android:layout_below="@id/tv_look_up_title"
@@ -196,7 +286,7 @@
             android:id="@+id/tv_hotline_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hotline"
+            android:text="@string/hotline_title"
             style="@style/h5"
             android:textColor="@color/indigo2"
             android:layout_marginTop="5dp"
@@ -207,7 +297,7 @@
             android:id="@+id/tv_hotline_desc"
             android:layout_width="175dp"
             android:layout_height="wrap_content"
-            android:text="Check emergency number to contact"
+            android:text="@string/hotline_home_desc"
             style="@style/b2"
             android:layout_marginStart="20dp"
             android:layout_below="@id/tv_hotline_title"

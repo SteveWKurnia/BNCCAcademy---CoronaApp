@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".home.MainActivity"
     android:background="@color/indigo">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,14 +44,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_header" />
 
-        <TextView
-            android:id="@+id/tv_total_case"
-            style="@style/h1"
+        <ProgressBar
+            android:id="@+id/pb_total_case"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="65dp"
-            android:text="86521"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_corona"
+            app:layout_constraintTop_toBottomOf="@id/iv_info"
+            android:indeterminateTint="@color/white"
+            tools:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_total_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="86521"
+            style="@style/h1"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="65dp"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_corona"
@@ -68,6 +80,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_corona"
             app:layout_constraintTop_toBottomOf="@id/tv_total_case" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_total_case"
+            app:constraint_referenced_ids="tv_total_case, tv_total_case_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
