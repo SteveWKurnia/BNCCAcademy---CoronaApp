@@ -10,7 +10,7 @@
     <string name="look_up_desc">See details by province all over Indonesia</string>
     <string name="hotline_home_desc">Check emergency number to contact</string>
     <string name="siaga_corona">Siaga Corona</string>
-    <string name="version_number">version_1_0_0</string>
+    <string name="version_number">Version 1.0.0</string>
     <string name="info_dialog_desc">Developed by Team2.BNCC\nPowered by\n\n\nCopyright (c) 2020</string>
     <string name="go_academy">GO Academy</string>
 </resources>
