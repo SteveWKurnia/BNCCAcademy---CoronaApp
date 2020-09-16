@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.bnccfinalproject.R
 import com.example.bnccfinalproject.hotline.HotlineDialogFragment
+import com.example.bnccfinalproject.infodialog.InformationDialog
 import com.example.bnccfinalproject.lookup.LookUpActivity
 import com.example.bnccfinalproject.util.removeComma
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -63,7 +64,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupInfoDialog() {
         iv_info?.setOnClickListener{
-            //no implementation yet
+            var dialog = InformationDialog()
+            dialog.show(supportFragmentManager, "customDialog")
         }
     }
 
