@@ -1,4 +1,4 @@
-package com.example.bnccfinalproject
+package com.example.bnccfinalproject.home
 
 import android.content.Intent
 import android.content.res.Resources
@@ -8,8 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.util.Log
-import com.example.bnccfinalproject.home.HomeData
-import com.example.bnccfinalproject.home.HomeViewModel
+import com.example.bnccfinalproject.R
 import com.example.bnccfinalproject.hotline.HotlineDialogFragment
 import com.example.bnccfinalproject.infodialog.InformationDialog
 import com.example.bnccfinalproject.lookup.LookUpActivity

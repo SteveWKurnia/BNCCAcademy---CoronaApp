@@ -7,7 +7,8 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bnccfinalproject.lookup.*
+import com.example.bnccfinalproject.PVContract
+import com.example.bnccfinalproject.R
 import kotlinx.android.synthetic.main.activity_look_up.*
 
 class LookUpActivity : AppCompatActivity(), PVContract.View<LookUpData> {
