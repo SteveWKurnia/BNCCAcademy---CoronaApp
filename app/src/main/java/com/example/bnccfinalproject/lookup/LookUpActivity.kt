@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bnccfinalproject.lookup.*
 import kotlinx.android.synthetic.main.activity_look_up.*
 
-class LookUpActivity : AppCompatActivity(), PVContract.View {
+class LookUpActivity : AppCompatActivity(), PVContract.View<LookUpData> {
     private val mockLookUpList = mutableListOf(
         LookUpData(provinceName = "Loading...")
     )
@@ -53,9 +53,9 @@ class LookUpActivity : AppCompatActivity(), PVContract.View {
         })
     }
 
-    override fun updateData(listData: List<*>) {
+    override fun updateData(listData: List<LookUpData>) {
         this@LookUpActivity.runOnUiThread {
-            lookUpAdapter.setData(listData as List<LookUpData>)
+            lookUpAdapter.setData(listData)
             pbLookUp.visibility = View.GONE
             rvLookUp.visibility = View.VISIBLE
         }

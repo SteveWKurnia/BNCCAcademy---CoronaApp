@@ -7,7 +7,7 @@ import okhttp3.Response
 import org.json.JSONArray
 import java.io.IOException
 
-class LookUpPresenter(val lookUpModel: LookUpModel, val view: PVContract.View) :
+class LookUpPresenter(val lookUpModel: LookUpModel, val view: PVContract.View<LookUpData>) :
     PVContract.Presenter {
     fun fetchData() {
         lookUpModel.fetchData(getData())

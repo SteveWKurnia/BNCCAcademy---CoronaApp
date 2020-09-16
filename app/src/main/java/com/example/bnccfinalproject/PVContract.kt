@@ -7,8 +7,8 @@ interface PVContract {
         fun getData(): Callback
     }
 
-    interface View {
-        fun updateData(listData: List<*>)
+    interface View<E> {
+        fun updateData(listData: List<E>)
         fun showError(e: Exception)
     }
 }
