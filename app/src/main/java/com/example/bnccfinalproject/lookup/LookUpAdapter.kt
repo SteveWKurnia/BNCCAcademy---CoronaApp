@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bnccfinalproject.R
 import java.util.*
 
-class LookUpAdapter():  RecyclerView.Adapter<LookUpViewHolder>(),Filterable{
+class LookUpAdapter : RecyclerView.Adapter<LookUpViewHolder>(), Filterable {
     private val lookUpListFull = mutableListOf<LookUpData>()
     private val lookUpList = mutableListOf<LookUpData>()
 
@@ -32,19 +32,20 @@ class LookUpAdapter():  RecyclerView.Adapter<LookUpViewHolder>(),Filterable{
 
     override fun getFilter(): Filter = filter
 
-    private val filter = object: Filter(){
+    private val filter = object : Filter() {
 
         override fun performFiltering(p0: CharSequence?): FilterResults {
             val filter = mutableListOf<LookUpData>()
 
-            if(p0.isNullOrBlank()){
+            if (p0.isNullOrBlank()) {
                 filter.addAll(lookUpListFull)
-            }
-            else{
+            } else {
                 val filterPattern = p0.toString().toLowerCase(Locale.ROOT).trim()
-                for(i in lookUpListFull.indices){
+                for (i in lookUpListFull.indices) {
 
-                    if(lookUpListFull.get(i).provinceName.toLowerCase(Locale.ROOT).contains(filterPattern)){
+                    if (lookUpListFull.get(i).provinceName.toLowerCase(Locale.ROOT)
+                            .contains(filterPattern)
+                    ) {
                         filter.add(lookUpListFull.get(i))
                     }
                 }
@@ -66,7 +67,7 @@ class LookUpAdapter():  RecyclerView.Adapter<LookUpViewHolder>(),Filterable{
         }
     }
 
-    fun setData(LookUpData:List<LookUpData>){
+    fun setData(LookUpData: List<LookUpData>) {
         lookUpList.apply {
             clear()
             addAll(LookUpData)

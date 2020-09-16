@@ -1,240 +1,53 @@
 package com.example.bnccfinalproject.lookup
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.content.Intent
+import android.util.Log
+import android.view.View
 import android.widget.SearchView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bnccfinalproject.home.MainActivity
 import com.example.bnccfinalproject.R
 import kotlinx.android.synthetic.main.activity_look_up.*
+import java.lang.Exception
 
-class LookUpActivity : AppCompatActivity() {
-
-    private val mockLookUpList = mutableListOf<LookUpData>(
-        LookUpData(
-            provinceName = "Aceh",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Sumatera Utara",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Sumatera Barat",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Riau",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Kepulauan Riau",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Jambi",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Sumatera Selatan",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Bengkulu",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Bangka Belitung",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Lampung",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Banten",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "DKI Jakarta",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Jawa Barat",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Jawa Tengah",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Jawa Timur",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Yogyakarta",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Bali",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Nusa Tenggara Barat",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Nusa Tenggara Timur",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Kalimantan Barat",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Kalimantan Tengah",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Kalimantan Selatan",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Kalimantan Timur",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Kalimantan Utara",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Sulawesi Utara",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Gorontalo",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Sulawesi Tengah",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Sulawesi Barat",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Sulawesi Tenggara",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Sulawesi Selatan",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Maluku Utara",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Maluku",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Papua Barat",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        ),
-        LookUpData(
-            provinceName = "Papua",
-            numberOfPositiveCases = 16538,
-            numberOfRecoveredCases = 10444,
-            numberOfDeathCases = 736
-        )
+class LookUpActivity : AppCompatActivity(), LookupContract.View {
+    private val mockLookUpList = mutableListOf(
+        LookUpData(provinceName = "Loading...")
     )
+
+    private val presenter = LookUpPresenter(this)
+    private val lookUpAdapter = LookUpAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_look_up)
+        setupBackButton()
+        setupAdapter()
 
-        iv_arrow.setOnClickListener{
-            openMainActivity()
+        presenter.getData()
+        setupSearch()
+        setupSwipeRefresh()
+    }
+
+    private fun setupBackButton() {
+        iv_arrow.setOnClickListener {
+            finish()
         }
+    }
 
-        val lookUpAdapter = LookUpAdapter()
+    private fun setupAdapter() {
         lookUpAdapter.setData(mockLookUpList)
         rvLookUp.layoutManager = LinearLayoutManager(this)
         rvLookUp.adapter = lookUpAdapter
+    }
 
-        searchView?.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+    private fun setupSearch() {
+        searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 return false
             }
+
             override fun onQueryTextChange(p0: String?): Boolean {
                 lookUpAdapter.filter.filter(p0)
                 return false
@@ -242,11 +55,22 @@ class LookUpActivity : AppCompatActivity() {
         })
     }
 
-    private fun openMainActivity(){
-        val intent = Intent(this, MainActivity::class.java).apply {
-            putExtra("Extras","Helloe")
+    private fun setupSwipeRefresh() {
+        srlLookUpData.setOnRefreshListener {
+            presenter.getData()
         }
-        startActivity(intent)
+    }
+
+    override fun onGetDataSuccess(list: List<LookUpData>) {
+        lookUpAdapter.setData(list)
+        srlLookUpData.isRefreshing = false
+        pbLookUp.visibility = View.GONE
+        srlLookUpData.visibility = View.VISIBLE
+    }
+
+    override fun onError(e: Exception) {
+        Toast.makeText(this@LookUpActivity, e.message, Toast.LENGTH_SHORT).show()
+        Log.e("QUERY FAILURE", Log.getStackTraceString(e), e.cause)
     }
 }
 

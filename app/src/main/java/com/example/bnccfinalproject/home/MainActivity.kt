@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import android.util.Log
 import com.example.bnccfinalproject.R
 import com.example.bnccfinalproject.hotline.HotlineDialogFragment
 import com.example.bnccfinalproject.infodialog.InformationDialog
@@ -25,12 +26,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.e("Activity", "LookUpActivity:onCreate")
         viewModel.getIndonesiaCoronaCase()
     }
 
-    private fun openLookUpActivity(){
-        val intent = Intent(this,
-            LookUpActivity::class.java)
+    private fun openLookUpActivity() {
+        val intent = Intent(this, LookUpActivity::class.java).apply {
+        }
         startActivity(intent)
     }
 
