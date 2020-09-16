@@ -11,7 +11,7 @@ import com.example.bnccfinalproject.R
 import kotlinx.android.synthetic.main.activity_look_up.*
 import java.lang.Exception
 
-class LookUpActivity : AppCompatActivity(), LookupContract.View {
+class LookUpActivity : AppCompatActivity(), LookUpContract.View {
     private val mockLookUpList = mutableListOf(
         LookUpData(provinceName = "Loading...")
     )
