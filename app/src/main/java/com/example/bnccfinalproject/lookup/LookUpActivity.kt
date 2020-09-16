@@ -58,6 +58,11 @@ class LookUpActivity : AppCompatActivity(), LookupContract.View {
     private fun setupSwipeRefresh() {
         srlLookUpData.setOnRefreshListener {
             presenter.getData()
+
+            searchView.apply {
+                setQuery("", false)
+                clearFocus()
+            }
         }
     }
 
