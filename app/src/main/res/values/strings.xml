@@ -9,4 +9,8 @@
     <string name="look_up_title">Look Up</string>
     <string name="look_up_desc">See details by province all over Indonesia</string>
     <string name="hotline_home_desc">Check emergency number to contact</string>
+    <string name="siaga_corona" />
+    <string name="version_1_0_0">version_1_0_0</string>
+    <string name="developed_by_team2_bncc_npowered_by_n_n_ncopyright_c_2020">developed_by_team2_bncc_npowered_by_n_n_ncopyright_c_2020</string>
+    <string name="go_academy">go_academy</string>
 </resources>
