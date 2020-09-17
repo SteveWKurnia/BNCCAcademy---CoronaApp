@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bnccfinalproject.R
 import kotlinx.android.synthetic.main.activity_look_up.*
 
-class LookUpActivity : AppCompatActivity(), LookupContract.View {
+class LookUpActivity : AppCompatActivity(), LookUpContract.View {
     private val mockLookUpList = mutableListOf(
         LookUpData(provinceName = "Loading...")
     )

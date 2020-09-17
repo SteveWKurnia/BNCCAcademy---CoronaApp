@@ -2,7 +2,7 @@ package com.example.bnccfinalproject.lookup
 
 import java.lang.Exception
 
-interface LookupContract {
+interface LookUpContract {
     interface View {
         fun onGetDataSuccess(list: List<LookUpData>)
         fun onError(e: Exception)
