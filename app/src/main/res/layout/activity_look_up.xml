@@ -16,12 +16,12 @@
 
         <TextView
             android:id="@+id/tv_indonesia"
-            style="@style/h1"
+            style="@style/h4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/rubik"
-            android:text="Indonesia"
+            android:text="@string/indonesia"
             android:textColor="@color/indigo2"
             android:textStyle="bold" />
 
@@ -31,7 +31,8 @@
             android:layout_height="25dp"
             android:background="@drawable/ic_arrow"
             android:layout_centerVertical="true"
-            android:layout_marginStart="25dp"/>
+            android:layout_marginStart="25dp"
+            android:contentDescription="@string/back_to_overview" />
 
     </RelativeLayout>
 
@@ -54,7 +55,8 @@
         android:background="@drawable/search_box_60dp"
         android:layout_marginTop="25dp"
         android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp">
+        android:layout_marginEnd="25dp"
+        android:paddingHorizontal="10dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_search"
@@ -68,13 +70,13 @@
 
         <androidx.appcompat.widget.SearchView
             android:id="@+id/sv_search"
-            app:queryHint="Lampung"
+            app:queryHint="@string/lookup_query_hint"
             app:iconifiedByDefault="false"
             app:searchIcon="@null"
             app:closeIcon="@null"
             android:layout_width="0dp"
             android:layout_height="60dp"
-            android:hint="eg: Lampung"
+            android:hint="@string/lookup_search_hint"
             app:queryBackground="@android:color/transparent"
             android:autofillHints=""
             android:inputType="text"
