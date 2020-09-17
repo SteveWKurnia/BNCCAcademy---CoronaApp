@@ -18,7 +18,7 @@
             style="@style/h4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Indonesia"
+            android:text="@string/indonesia"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
             android:id="@+id/iv_info"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:contentDescription="Information"
+            android:contentDescription="@string/information"
             android:src="@drawable/ic_info"
             app:layout_constraintBottom_toBottomOf="@id/tv_header"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,8 @@
             android:layout_marginTop="10dp"
             android:src="@drawable/ic_virus"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_header" />
+            app:layout_constraintTop_toBottomOf="@id/tv_header"
+            android:contentDescription="@string/coronavirus" />
 
         <ProgressBar
             android:id="@+id/pb_total_case"
@@ -75,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:text="Total Cases"
+            android:text="@string/total_cases"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_corona"

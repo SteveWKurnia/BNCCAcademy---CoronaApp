@@ -229,7 +229,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_location_pin"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/look_up_title" />
 
         <TextView
             android:id="@+id/tv_look_up_title"
@@ -239,8 +240,9 @@
             style="@style/h5"
             android:textColor="@color/indigo2"
             android:layout_marginTop="5dp"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@id/iv_look_up"/>
+            android:layout_marginHorizontal="20dp"
+            android:layout_toEndOf="@id/iv_look_up"
+            android:layout_toStartOf="@id/iv_look_up_chevron"/>
 
         <TextView
             android:id="@+id/tv_look_up_desc"
@@ -248,9 +250,10 @@
             android:layout_height="wrap_content"
             android:text="@string/look_up_desc"
             style="@style/b2"
-            android:layout_marginStart="20dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_below="@id/tv_look_up_title"
-            android:layout_toEndOf="@id/iv_look_up"/>
+            android:layout_toEndOf="@id/iv_look_up"
+            android:layout_toStartOf="@id/iv_look_up_chevron"/>
 
         <ImageView
             android:id="@+id/iv_look_up_chevron"
@@ -258,7 +261,8 @@
             android:layout_height="25dp"
             android:src="@drawable/ic_chevron"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/goto_lookup" />
 
     </RelativeLayout>
 
@@ -280,7 +284,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_siren"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/hotline_title" />
 
         <TextView
             android:id="@+id/tv_hotline_title"
@@ -290,8 +295,9 @@
             style="@style/h5"
             android:textColor="@color/indigo2"
             android:layout_marginTop="5dp"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@id/iv_hotline"/>
+            android:layout_marginHorizontal="20dp"
+            android:layout_toEndOf="@id/iv_hotline"
+            android:layout_toStartOf="@id/iv_hotline_chevron"/>
 
         <TextView
             android:id="@+id/tv_hotline_desc"
@@ -299,9 +305,10 @@
             android:layout_height="wrap_content"
             android:text="@string/hotline_home_desc"
             style="@style/b2"
-            android:layout_marginStart="20dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_below="@id/tv_hotline_title"
-            android:layout_toEndOf="@id/iv_hotline"/>
+            android:layout_toEndOf="@id/iv_hotline"
+            android:layout_toStartOf="@id/iv_hotline_chevron" />
 
         <ImageView
             android:id="@+id/iv_hotline_chevron"
@@ -309,7 +316,8 @@
             android:layout_height="25dp"
             android:src="@drawable/ic_chevron"
             android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/goto_hotline" />
 
     </RelativeLayout>
 

@@ -9,8 +9,18 @@
     <string name="look_up_title">Look Up</string>
     <string name="look_up_desc">See details by province all over Indonesia</string>
     <string name="hotline_home_desc">Check emergency number to contact</string>
-    <string name="siaga_corona" />
-    <string name="version_1_0_0">version_1_0_0</string>
-    <string name="developed_by_team2_bncc_npowered_by_n_n_ncopyright_c_2020">developed_by_team2_bncc_npowered_by_n_n_ncopyright_c_2020</string>
-    <string name="go_academy">go_academy</string>
+    <string name="siaga_corona">Siaga Corona</string>
+    <string name="version_number">Version 1.0.0</string>
+    <string name="info_dialog_desc">Developed by Team 2.BNCC\nPowered by\n\n\nCopyright (c) 2020</string>
+    <string name="go_academy">GO Academy</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="back_to_overview">Back to overview</string>
+    <string name="lookup_query_hint">Lampung</string>
+    <string name="lookup_search_hint">eg: Lampung</string>
+    <string name="information">Information</string>
+    <string name="coronavirus">coronavirus</string>
+    <string name="total_cases">Total Cases</string>
+    <string name="goto_lookup">Goto Lookup</string>
+    <string name="goto_hotline">Goto Hotline</string>
+    <string name="close_dialog">Close dialog</string>
 </resources>

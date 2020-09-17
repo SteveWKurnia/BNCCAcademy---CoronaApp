@@ -19,15 +19,15 @@ class LookUpPresenter(val view: LookupContract.View) :
             override fun onResponse(call: Call<List<LookUpNetworkAttribute>>, response: Response<List<LookUpNetworkAttribute>>) {
                 if (!response.isSuccessful) Log.e("ERROR_RETRO", response.message())
                 else {
-                    val listLookUpData = mutableListOf<LookUpData>()
+                    val list = mutableListOf<LookUpData>()
                     for (i in response.body()!!.indices) {
                         response.body()?.get(i)?.attribute.let {
                             if (it != null) {
-                                listLookUpData.add(it)
+                                list.add(it)
                             }
                         }
                     }
-                    view.onGetDataSuccess(listLookUpData)
+                    view.onGetDataSuccess(list)
                 }
             }
         })

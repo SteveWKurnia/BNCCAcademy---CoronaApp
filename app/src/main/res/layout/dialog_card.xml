@@ -6,19 +6,16 @@
     android:background="@drawable/dialog_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp"
-    >
-
+    android:padding="25dp">
 
     <ImageView
         android:id="@+id/close"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/closevector"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/ic_close"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/close_dialog" />
 
     <TextView
         android:id="@+id/siaga_corona"
@@ -26,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Siaga Corona"
+        android:text="@string/siaga_corona"
         android:textColor="@color/indigo"
         android:textSize="25.8sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +35,7 @@
         style="@style/b1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Version 1.0.0"
+        android:text="@string/version_number"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +55,7 @@
         style="@style/b1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Developed by Team2.BNCC\nPowered by\n\n\nCopyright (c) 2020"
+        android:text="@string/info_dialog_desc"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/iv_bubble"
         app:layout_constraintTop_toBottomOf="@+id/iv_bubble"/>
@@ -68,13 +65,12 @@
         style="@style/h4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GO Academy"
+        android:text="@string/go_academy"
         android:textColor="@color/green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_bubble"
         android:layout_marginTop="20dp"
         android:layout_marginStart="90dp"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
